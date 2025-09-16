@@ -6,7 +6,7 @@ const Header: React.FC = () => {
   const { isApiConnected } = useApp();
 
   const handleLookerRedirect = () => {
-    window.open('https://creattives.cloud.looker.com/login', '_blank');
+    window.open('https://creattives.cloud.looker.com/dashboards/86?Data+Date=this+year&Nome+indicadores=&Responsavel=', '_blank');
   };
 
   const navItems = [

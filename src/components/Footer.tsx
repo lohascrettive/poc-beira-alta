@@ -19,7 +19,6 @@ const Footer: React.FC = () => {
       title: 'Suporte',
       items: [
         'Segunda a Sexta: 8h às 18h',
-        'Suporte técnico 24/7',
         'Versão: 1.0.0'
       ]
     }
@@ -62,9 +61,9 @@ const Footer: React.FC = () => {
               className="flex items-center space-x-4 mb-6"
             >
               <img 
-                src="/beiraalta.png" 
+                src="/CREATTIVE - PLANO DE PRODUTOS (3).png" 
                 alt="Beira Alta Industrial" 
-                className="h-12 w-auto"
+                className="h-16 w-auto"
               />
             </motion.div>
             
@@ -72,7 +71,7 @@ const Footer: React.FC = () => {
               variants={itemVariants}
               className="text-red-100 leading-relaxed mb-6"
             >
-              Líder em soluções industriais com foco em qualidade, inovação e excelência operacional.
+              Visão de tudo em todo momento!
             </motion.p>
 
             {/* Contact Info */}
@@ -80,17 +79,10 @@ const Footer: React.FC = () => {
               variants={itemVariants}
               className="space-y-3"
             >
-              <div className="flex items-center space-x-3 text-red-100">
-                <MapPin size={16} />
-                <span className="text-sm">Beira Alta, Portugal</span>
-              </div>
-              <div className="flex items-center space-x-3 text-red-100">
-                <Phone size={16} />
-                <span className="text-sm">+351 XXX XXX XXX</span>
-              </div>
+
               <div className="flex items-center space-x-3 text-red-100">
                 <Mail size={16} />
-                <span className="text-sm">contato@beiraalta.pt</span>
+                <span className="text-sm">suporte@creattive.cc</span>
               </div>
             </motion.div>
           </motion.div>
@@ -140,19 +132,19 @@ const Footer: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             className="text-red-200 text-sm"
           >
-            © {currentYear} Creattive.cc. Todos os direitos reservados.
+            © {currentYear} Desenvolvido por Creattive.cc. Todos os direitos reservados. Disponibilizado para Beira Alta Industria
           </motion.p>
 
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-2 text-red-200"
           >
-            <span className="text-sm">Desenvolvido para Beira Alta por</span>
+            <span className="text-sm"></span>
             <div className="flex items-center space-x-2 bg-white/10 px-3 py-1 rounded-lg">
               <img 
                 src="/CREATTIVE - PLANO DE PRODUTOS (3).png" 
                 alt="Farol 360" 
-                className="h-4 w-auto"
+                className="h-10 w-auto"
               />
             </div>
           </motion.div>
