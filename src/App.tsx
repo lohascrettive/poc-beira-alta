@@ -1,13 +1,11 @@
 import React from 'react';
-import { AppProvider, useApp } from './context/AppContext';
+import { AppProvider } from './context/AppContext';
 import Header from './components/Header';
 import ChatInterface from './components/ChatInterface';
 import FeaturesSection from './components/FeaturesSection';
 import Footer from './components/Footer';
 
 const AppContent: React.FC = () => {
-  const { state } = useApp();
-
   return (
     <div className="min-h-screen bg-accent-50">
       <Header />

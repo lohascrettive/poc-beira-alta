@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Lightbulb, Clock, Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -96,7 +96,7 @@ const Footer: React.FC = () => {
           </motion.div>
 
           {/* Footer Sections */}
-          {footerSections.map((section, index) => (
+          {footerSections.map((section) => (
             <motion.div key={section.title} variants={itemVariants}>
               <motion.h3
                 whileHover={{ x: 5 }}

@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Bot, User, Loader2, Sparkles } from 'lucide-react';
+import { Send, Bot, User, Loader2 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { Message } from '../types';
 import MarkdownRenderer from './MarkdownRenderer';
 
 const ChatInterface: React.FC = () => {
-  const { chatState, sendMessage, isApiConnected } = useApp();
+  const { chatState, sendMessage } = useApp();
   const [inputValue, setInputValue] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -46,7 +45,7 @@ const ChatInterface: React.FC = () => {
     }
   };
 
-  const MessageBubble: React.FC<{ message: Message; index: number }> = ({ message, index }) => {
+  const MessageBubble: React.FC<{ message: Message }> = ({ message }) => {
     const isUser = message.type === 'user';
     
     return (
@@ -112,8 +111,8 @@ const ChatInterface: React.FC = () => {
       <div className="bg-white rounded-b-2xl shadow-sm min-h-[400px] max-h-[500px] flex flex-col">
         {/* Messages Area */}
         <div className="flex-1 overflow-y-auto p-6 chat-scroll">
-          {chatState.messages.map((message, index) => (
-            <MessageBubble key={message.id} message={message} index={index} />
+          {chatState.messages.map((message) => (
+            <MessageBubble key={message.id} message={message} />
           ))}
 
           {/* Typing Indicator */}

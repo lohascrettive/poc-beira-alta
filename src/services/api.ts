@@ -19,10 +19,16 @@ export interface ChatResponse {
   error?: string;
 }
 
-export interface ApiError {
-  message: string;
-  code: string;
-  details?: any;
+export class ApiError extends Error {
+  public code: string;
+  public details?: any;
+
+  constructor(message: string, code: string, details?: any) {
+    super(message);
+    this.name = 'ApiError';
+    this.code = code;
+    this.details = details;
+  }
 }
 
 class ApiService {
@@ -104,7 +110,7 @@ export const useApi = () => {
 };
 
 // Função para simular resposta da IA (fallback)
-export const simulateAIResponse = (userMessage: string): Promise<ChatResponse> => {
+export const simulateAIResponse = (_userMessage: string): Promise<ChatResponse> => {
   return new Promise((resolve) => {
     setTimeout(() => {
       const responses = [

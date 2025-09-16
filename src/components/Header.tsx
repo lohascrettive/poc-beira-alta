@@ -3,14 +3,14 @@ import { MessageCircle, BarChart3, ExternalLink } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
 const Header: React.FC = () => {
-  const { state, setCurrentSection, isApiConnected } = useApp();
+  const { isApiConnected } = useApp();
 
   const handleLookerRedirect = () => {
     window.open('https://creattives.cloud.looker.com/login', '_blank');
   };
 
   const navItems = [
-    { id: 'chat', label: 'Chat IA', icon: MessageCircle },
+    { id: 'chat', label: 'Chat IA', icon: MessageCircle, isExternal: false },
     { id: 'dashboard', label: 'Dashboard', icon: BarChart3, isExternal: true },
   ] as const;
 
@@ -31,16 +31,15 @@ const Header: React.FC = () => {
           <nav className="flex space-x-1">
             {navItems.map((item) => {
               const Icon = item.icon;
-              const isActive = state.currentSection === item.id;
-              const isExternal = 'isExternal' in item && item.isExternal;
+              const isExternal = item.isExternal;
               
               return (
                 <button
                   key={item.id}
-                  onClick={() => isExternal ? handleLookerRedirect() : setCurrentSection(item.id)}
+                  onClick={() => isExternal ? handleLookerRedirect() : undefined}
                   className={`
                     flex items-center space-x-2 px-6 py-3 rounded-lg font-semibold transition-colors duration-200
-                    ${isActive && !isExternal
+                    ${!isExternal
                       ? 'bg-primary-600 text-white'
                       : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
                     }
