@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin } from 'lucide-react';
+
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
             >
 
               <div className="flex items-center space-x-3 text-red-100">
-                <Mail size={16} />
+
                 <span className="text-sm">suporte@creattive.cc</span>
               </div>
             </motion.div>
